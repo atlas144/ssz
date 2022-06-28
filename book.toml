@@ -1,0 +1,6 @@
+[book]
+title = "Státní závěrečné zkoušky - Aplikovaná informatika"
+authors = ["Viktor Andrusyak", "Matěj Klabouch", "Bruno Semerek", "Jakub Švarc", "Ondřej Trtílek"]
+language = "cs"
+multilingual = false
+src = "src"
