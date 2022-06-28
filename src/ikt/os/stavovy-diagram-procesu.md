@@ -1,0 +1,1 @@
+# Stavový diagram procesů

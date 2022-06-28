@@ -1,0 +1,1 @@
+# Paměťový podsystém počítače

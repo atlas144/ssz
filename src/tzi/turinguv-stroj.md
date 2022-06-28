@@ -1,0 +1,1 @@
+# Turingův stroj

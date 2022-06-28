@@ -1,0 +1,1 @@
+# Rekurentní neuronové sítě

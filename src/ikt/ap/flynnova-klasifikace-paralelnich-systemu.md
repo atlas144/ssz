@@ -1,0 +1,1 @@
+# Flynnova klasifikace paralelních systémů

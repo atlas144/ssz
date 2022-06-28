@@ -1,0 +1,1 @@
+# Entitně relační model

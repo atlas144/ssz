@@ -1,0 +1,1 @@
+# Instrukční cyklus počítače

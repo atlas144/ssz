@@ -1,0 +1,1 @@
+# Dědičnost a polymorfismus

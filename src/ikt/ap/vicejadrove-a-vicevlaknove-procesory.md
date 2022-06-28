@@ -1,0 +1,1 @@
+# Vícejádrové a vícevláknové procesory

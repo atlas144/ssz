@@ -1,0 +1,1 @@
+# Genetický algoritmus

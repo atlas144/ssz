@@ -1,0 +1,1 @@
+# Neuronové sítě, základní pojmy

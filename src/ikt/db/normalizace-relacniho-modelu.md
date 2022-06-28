@@ -1,0 +1,1 @@
+# Normalizace relačního modelu

@@ -1,0 +1,1 @@
+# Algoritmická řešitelnost

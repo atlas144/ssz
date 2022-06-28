@@ -1,0 +1,1 @@
+# Abstraktní datové struktury
