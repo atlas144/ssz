@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="cs" class="sidebar-visible no-js light">
+<html lang="cs" class="sidebar-visible no-js ayu">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
         <meta name="robots" content="noindex" />
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="">
+        <meta name="description" content="Studijní materiály ke Státním závěrečným zkouškám pro obor Aplikovaná informatika - Embeded systémy na PRF JCU">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -26,12 +26,14 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "ayu";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -57,7 +59,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('ayu')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -94,11 +96,11 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu (default)</button></li>
                         </ul>
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
@@ -110,6 +112,9 @@
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/atlas144/szz" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
                     </div>
                 </div>
@@ -137,6 +142,61 @@
                     <main>
                         <h1 id="Úvod"><a class="header" href="#Úvod">Úvod</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="přispívání"><a class="header" href="#přispívání">Přispívání</a></h1>
+<h2 id="software"><a class="header" href="#software">Software</a></h2>
+<p>Pro participaci na tvorbě materiálů je třeba mít nainstalovaný <a href="https://git-scm.com/downloads">GIT</a> a jakýkoliv textový editor (ideálně <a href="https://vscodium.com/#install">VSCodium</a> či jiný editor s podporou <em>VS Code Extensions</em>).</p>
+<p>Proces publikování vytvořených materiálů zajišťuje CLI nástroj <a href="https://rust-lang.github.io/mdBook">mdBook</a> (ke stažení <a href="https://github.com/rust-lang/mdBook/releases">zde</a>). Po rozbalení archivu je ideální přidat cestu k binárce do <code>PATH</code>, poté není při volání nutné udávat celou její cestu.</p>
+<h2 id="nastavení-prostředí"><a class="header" href="#nastavení-prostředí">Nastavení prostředí</a></h2>
+<h3 id="klonování-repozitáře"><a class="header" href="#klonování-repozitáře">Klonování repozitáře</a></h3>
+<pre><code class="language-bash">git clone https://github.com/atlas144/szz.git
+</code></pre>
+<h3 id="vs-code-extensions"><a class="header" href="#vs-code-extensions">VS Code Extensions</a></h3>
+<p>Pokud používáte editor s podporou <em>VS Code Extensions</em>, doporučujeme nainstalovat tyto:</p>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one">Markdown All in One</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker">Code Spell Checker</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-czech">Czech - Code Spell Checker</a>
+<ul>
+<li>je nutné upravit <code>Předvolby &gt; Nastavení &gt; cSpell.language</code> na <code>en,cs</code></li>
+</ul>
+</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml">Better TOML</a></li>
+</ul>
+<h2 id="postup"><a class="header" href="#postup">Postup</a></h2>
+<p>Řekněme, že budeme zpracovávat okruh <em>2.1.4. Instrukční cyklus počítače</em> (2.1.4. je číslo kapitoly, viz <a href="https://atlas144.github.io/szz">seznam</a>).</p>
+<h3 id="příprava"><a class="header" href="#příprava">Příprava</a></h3>
+<p>Vytvoříme novou větev v větve <code>main</code> s názvem <em>2-1-4-instrukcni-cyklus-pocitace</em>:</p>
+<p><img src="contribution/new_branch.png" alt="Nová větev" /></p>
+<p>Poté stáhneme změny pomocí</p>
+<pre><code class="language-bash">git pull
+</code></pre>
+<p>a přesuneme se do nově vytvořené větve.</p>
+<pre><code class="language-bash">git checkout 2-1-4-instrukcni-cyklus-pocitace
+</code></pre>
+<h3 id="obsah"><a class="header" href="#obsah">Obsah</a></h3>
+<p>Nyní můžeme začít upravovat soubor pro daný okruh. Zdrojové soubory se nachází ve složce <code>./src</code> a následujících podsložkách podle předmětu. Zde <code>Informační a komunikační technologie &gt; Architektura počítačů &gt; Instrukční cyklus počítače</code>, cesta tedy je <code>./src/ikt/ap/instrukcni-cyklus-pocitace.md</code>.</p>
+<p>Přidáváme-li obrázky či jiný dodatečný obsah, vytvoříme složku s názvem okruhu (zde tedy <code>./src/ikt/ap/instrukcni-cyklus-pocitace</code>) a obsah přidáváme do ní.</p>
+<p>V průběhu editace je užitečné vidět finální podobu dokumentu. K tomu slouží náhledy v editoru:</p>
+<p><img src="./contribution/md_preview.png" alt="Tlačítko náhledu ve VSCodium" /></p>
+<p>Rovněž si lze výslednou podobu prohlédnou přímo pomocí <em>mdBook</em>, a to spuštěním příkazu</p>
+<pre><code class="language-bash">mdbook serve --open             # pokud je lokace v PATH
+[cesta]/mdbook serve --open     # pokud se binarka spousti primo
+</code></pre>
+<p>Změny je dobré průběžně commitovat a pushovat na server!</p>
+<pre><code class="language-bash">git commit -m &quot;feat(content): lorem ipsum&quot;
+git push
+</code></pre>
+<h4 id="formát-zápisu"><a class="header" href="#formát-zápisu">Formát zápisu</a></h4>
+<p>Obsah je zapisován ve formátu <a href="https://commonmark.org/help/">Markdown</a> s rozšířeními, která jsou popsána <a href="https://rust-lang.github.io/mdBook/format/markdown.html">zde</a>.</p>
+<p>Pro zápis matematických výrazů lze použít <a href="https://www.mathjax.org/">MathJax</a> (s drobnými <a href="https://rust-lang.github.io/mdBook/format/mathjax.html">omezeními</a>).</p>
+<h3 id="konec-editace"><a class="header" href="#konec-editace">Konec editace</a></h3>
+<p>Považujeme-li okruh za dokončený, vygenerujeme produkční verzi náhledu</p>
+<pre><code class="language-bash">mdbook build
+# nebo
+[cesta]/mdbook build
+</code></pre>
+<p>uděláme commit, pushneme změny a následně otevřeme pull request ze zpracovávané větve (<code>2-1-4-instrukcni-cyklus-pocitace</code>) do <code>main</code>:</p>
+<p><img src="./contribution/pr.png" alt="Nový pull request" /></p>
+<p>Po schválení se nově zpracovaný okruh objeví na <a href="https://atlas144.github.io/szz">stránce</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="pojem-algoritmus-a-jeho-složitost"><a class="header" href="#pojem-algoritmus-a-jeho-složitost">Pojem algoritmus a jeho složitost</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="abstraktní-datové-struktury"><a class="header" href="#abstraktní-datové-struktury">Abstraktní datové struktury</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="základní-řadící-algoritmy"><a class="header" href="#základní-řadící-algoritmy">Základní řadící algoritmy</a></h1>
@@ -242,7 +302,9 @@
         <!-- Custom JS scripts -->
         <script type="text/javascript">
         window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
         });
         </script>
     </body>

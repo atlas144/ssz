@@ -1,6 +1,20 @@
 [book]
 title = "Státní závěrečné zkoušky - Aplikovaná informatika"
+description = "Studijní materiály ke Státním závěrečným zkouškám pro obor Aplikovaná informatika - Embeded systémy na PRF JCU"
 authors = ["Viktor Andrusyak", "Matěj Klabouch", "Bruno Semerek", "Jakub Švarc", "Ondřej Trtílek"]
 language = "cs"
 multilingual = false
 src = "src"
+
+[build]
+build-dir = "docs"
+create-missing = true
+use-default-preprocessors = true
+
+[output.html]
+theme = "ayu"
+default-theme = "ayu"
+preferred-dark-theme = "ayu"
+mathjax-support = true
+git-repository-url = "https://github.com/atlas144/szz"
+git-repository-icon = "fa-github"
